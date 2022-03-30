@@ -1,5 +1,5 @@
-import parser.Parser
-import tokens.Tokenizer
+import compiler.parser.Parser
+import compiler.tokens.Tokenizer
 import java.io.BufferedReader
 import java.io.File
 

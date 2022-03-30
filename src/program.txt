@@ -1,7 +1,18 @@
-Int x = 10;
-Byte value = 0b100;
-Short y = 0xF;
-Long z = 0o123456;
+int x = 10
+byte value = 0b100
+short y = 0xF
+long z = 0o123456
 
-String str = "Hello!";
-String str2 = "Hello, " + "World!";
+string str = "Hello!"
+
+label:
+
+boolean bool = true
+float f = 0.04
+double d = 10.4
+double d2 = 10
+
+char c = '3'
+char j = '\n'
+
+goto label
