@@ -52,6 +52,12 @@ val tokenList: List<TokenPrecedenceGroup> = listOf(
         ComparisonOperatorPattern.LESS_THAN
     ),
 
-    TokenPrecedenceGroup(UnfixedOperatorPattern.ASSIGNMENT_OPERATOR, UnfixedOperatorPattern.COLON_OPERATOR),
+    TokenPrecedenceGroup(
+        UnfixedOperatorPattern.ASSIGNMENT_OPERATOR,
+        UnfixedOperatorPattern.COLON_OPERATOR,
+        UnfixedOperatorPattern.DOT_OPERATOR,
+        UnfixedOperatorPattern.COMMA_OPERATOR
+    ),
+
     TokenPrecedenceGroup(StatementEndTokenPattern)
 )

@@ -1,15 +1,31 @@
-import compiler.parser.Parser
-import compiler.tokens.Tokenizer
-import java.io.BufferedReader
-import java.io.File
+import compiler.parser.statements.statement_patterns.assignment.DeclarationPattern
+import compiler.parser.structure.common_patterns.ListingStructure
+import compiler.tokens.patterns.TokenPattern
+import utils.patterns.ImpliedPattern
 
 fun main() {
-    val bufferedReader: BufferedReader = File("src/program.txt").bufferedReader()
-    val inputProgram = bufferedReader.use { it.readText() }
+    println(ListingStructure<TokenPattern>(ImpliedPattern(DeclarationPattern.INT_DECLARATION.assignedValue)).
+        values.
+        iterator().forEach { println(it) }
+    )
 
-    println("input program:")
-    println(inputProgram)
+    println("h0 -================================-")
 
-    val tokens = Tokenizer(inputProgram).tokenize()
-    println(Parser.parseTokenList(tokens).heldStatements)
+    println(
+        ListingStructure<String>(DeclarationPattern.INT_DECLARATION.assignedValue).matches(toFeeder())
+    )
+
+    println("reached end")
+
+
+//    val bufferedReader: BufferedReader = File("src/program.txt").bufferedReader()
+//    val inputProgram = bufferedReader.use { it.readText() }
+//
+//    println("input program:")
+//    println(inputProgram)
+//
+//    val tokens = Tokenizer(inputProgram).tokenize()
+//    for (x in Parser.parseTokenList(tokens).heldStatements) {
+//        println(x)
+//    }
 }

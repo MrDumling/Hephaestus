@@ -15,4 +15,4 @@ double d2 = 10
 char c = '3'
 char j = '\n'
 
-goto label
+int[] x = {3, 5}

@@ -7,5 +7,5 @@ import compiler.tokens.patterns.non_specific.ValidName
 import compiler.tokens.patterns.operators.UnfixedOperatorPattern
 
 object LabelPattern: StatementPattern {
-    override val tokenPattern: TokenStructurePattern = TokenGroupingPattern(ValidName, UnfixedOperatorPattern.COLON_OPERATOR)
+    override val tokenPattern = TokenGroupingPattern(ValidName, UnfixedOperatorPattern.COLON_OPERATOR)
 }

@@ -14,24 +14,31 @@ object Parser {
 
     private fun parseStatements(inputTokens: TokenValueList): List<Statement> =
         getUnparsedStatements(inputTokens).map { x ->
-            StatementFactory.createStatement(x)
+            StatementFactory.buildStatement(x)
         }
 
-    private fun getUnparsedStatements(inputTokens: TokenValueList): List<TokenValueList> {
+    fun getUnparsedStatements(inputTokens: TokenValueList): List<TokenValueList> {
         val output: MutableList<TokenValueList> = ArrayList()
 
         var currentTokenValueList: MutableList<TokenValue> = ArrayList()
 
         for (currentToken: TokenValue in inputTokens) {
-            if (currentToken.type == StatementEndTokenPattern) {
-                if(currentTokenValueList.size == 0) continue
-
-                output.add(currentTokenValueList)
-                currentTokenValueList = ArrayList()
+            if (currentToken.type != StatementEndTokenPattern) {
+                currentTokenValueList.add(currentToken)
                 continue
             }
 
-            currentTokenValueList.add(currentToken)
+            if (StatementFactory.matchesStatement(currentTokenValueList)) {
+                output.add(currentTokenValueList)
+                currentTokenValueList = ArrayList()
+            }
+        }
+
+        //allows statements at ends of programs, without a need for a ';' or a newline
+        if (StatementFactory.matchesStatement(currentTokenValueList)) {
+            output.add(currentTokenValueList)
+        } else {
+            throw RuntimeException("Could not match: $currentTokenValueList")
         }
 
         return output

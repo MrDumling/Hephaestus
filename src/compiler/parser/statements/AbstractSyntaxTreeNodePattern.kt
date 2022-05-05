@@ -1,5 +1,5 @@
 package compiler.parser.statements
 
-import compiler.parser.structure.AbstractTokenHolderPattern
+import utils.patterns.Pattern
 
-interface AbstractSyntaxTreeNodePattern<T> : AbstractTokenHolderPattern<T>
+interface AbstractSyntaxTreeNodePattern<T> : Pattern<T>

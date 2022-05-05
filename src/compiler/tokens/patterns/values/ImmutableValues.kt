@@ -1,6 +1,8 @@
 package compiler.tokens.patterns.values
 
-enum class ImmutableValues(override val matchedPattern: Regex) : AbstractValueTokenPattern {
+import compiler.tokens.patterns.TokenPattern
+
+enum class ImmutableValues(override val matchedPattern: Regex) : TokenPattern {
     BOOLEAN_VALUE(Regex("true|false")),
     CHARACTER_VALUE(Regex("'(([^\\\\'])|(\\\\[ntrv\\\\'\"?]))'")),
     DOUBLE_VALUE(Regex("[+-]?[0-9]*?\\.[0-9]+")),

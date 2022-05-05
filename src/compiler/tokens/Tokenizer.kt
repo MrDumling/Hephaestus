@@ -17,7 +17,7 @@ class Tokenizer(private val program: String) {
 
     fun tokenize(): List<TokenValue> {
         if (!hasTokens()) {
-            if(program == "") return listOf()
+            if (program == "") return listOf()
             throw RuntimeException("Can not match: $program")
         }
 

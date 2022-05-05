@@ -7,5 +7,5 @@ import compiler.tokens.patterns.Keyword
 import compiler.tokens.patterns.non_specific.ValidName
 
 object GotoPattern : StatementPattern {
-    override val tokenPattern: TokenStructurePattern = TokenGroupingPattern(Keyword.GOTO_KEYWORD, ValidName)
+    override val tokenPattern = TokenGroupingPattern(Keyword.GOTO_KEYWORD, ValidName)
 }
