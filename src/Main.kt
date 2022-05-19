@@ -1,19 +1,16 @@
 import compiler.parser.statements.statement_patterns.assignment.DeclarationPattern
-import compiler.parser.structure.common_patterns.ListingStructure
+import compiler.parser.structure.common_patterns.listingStructure
 import compiler.tokens.patterns.TokenPattern
 import utils.patterns.ImpliedPattern
 
 fun main() {
-    println(ListingStructure<TokenPattern>(ImpliedPattern(DeclarationPattern.INT_DECLARATION.assignedValue)).
-        values.
-        iterator().forEach { println(it) }
-    )
+    println(listingStructure(ImpliedPattern(DeclarationPattern.INT_DECLARATION.assignedValue)))
 
     println("h0 -================================-")
 
-    println(
-        ListingStructure<String>(DeclarationPattern.INT_DECLARATION.assignedValue).matches(toFeeder())
-    )
+//    println(
+//        listingStructure<String>(DeclarationPattern.INT_DECLARATION.assignedValue).matches(toFeeder())
+//    )
 
     println("reached end")
 

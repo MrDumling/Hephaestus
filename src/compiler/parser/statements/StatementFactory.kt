@@ -20,7 +20,6 @@ object StatementFactory {
         *(DeclarationPattern.values().map{
             x -> ArrayDeclarationPattern(x)
         }).toTypedArray()
-
     ).any {
         it.matches(inputTokens)
     }

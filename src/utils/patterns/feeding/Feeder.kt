@@ -1,5 +1,5 @@
 package utils.patterns.feeding
 
-interface Feeder<T> : Iterator<T> {
-    fun getCurrentValue(): T
-}
+import utils.miscellaneous.Copyable
+
+interface Feeder<T> : Iterator<T>
